@@ -83,7 +83,7 @@ type alias TileCoordinates = (YCoordinate, XCoordinate)
 updateTileInRow : XCoordinate -> Maybe Color -> TileRow -> TileRow
 updateTileInRow x color tileRow =
  let
-   ccolor = Maybe.withDefault blankTile color
+   ccolor = Maybe.withDefault (Color "pink" "white") color
  in
    case (updateAt x (\_ -> ccolor) tileRow) of
      Nothing -> tileRow
